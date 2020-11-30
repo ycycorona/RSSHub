@@ -205,7 +205,7 @@
         ],
     },
     'youtube.com': {
-        _name: 'Youtube',
+        _name: 'YouTube',
         www: [
             {
                 title: '用户',
@@ -2374,6 +2374,21 @@
                 docs: 'https://docs.rsshub.app/anime.html#eventernote',
                 source: '/actors/:name/:id/events',
                 target: '/eventernote/actors/:name/:id',
+            },
+        ],
+    },
+    'instagram.com': {
+        _name: 'Instagram',
+        www: [
+            {
+                title: '用户',
+                docs: 'https://docs.rsshub.app/social-media.html#instagram',
+                source: '/:id',
+                target: (params) => {
+                    if (params.id !== 'explore' && params.id !== 'developer') {
+                        return '/instagram/user/:id';
+                    }
+                },
             },
         ],
     },
